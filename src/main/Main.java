@@ -8,9 +8,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         Json.load();
-
-
-        Settings.save();
+        Settings.load();
 
         launch(args);
     }
@@ -18,6 +16,12 @@ public class Main extends Application {
     public void start(Stage stage) {
         stage.setTitle("DDO Manager");
 
+        //Remember Maximized Setting
+        stage.setMaximized(Settings.startMaximized);
+        stage.maximizedProperty().addListener((e, o, n) -> {
+            Settings.startMaximized = n;
+            Settings.save();
+        });
 
         stage.show();
         stage.setMaximized(true);
