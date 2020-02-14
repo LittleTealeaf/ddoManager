@@ -1,6 +1,8 @@
 module ddoManager {
 
-    exports main to javafx.graphics;
+
+    exports main;
+
 
     requires javafx.base;
     requires transitive javafx.graphics;

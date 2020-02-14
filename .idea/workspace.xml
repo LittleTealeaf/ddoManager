@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6826edec-2051-4571-b8cf-6013f8c647d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Json.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,12 +17,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Tealeaf &lt;35083315+littletealeaf@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Xnn1CWJ1d9aJZIGQczm1rifdxa" />
@@ -39,7 +45,8 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -61,6 +68,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -72,6 +82,14 @@
       <option name="presentableId" value="Default" />
       <updated>1581690508103</updated>
     </task>
+    <task id="LOCAL-00001" summary="Started the Project">
+      <created>1581691200686</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581691200686</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -79,6 +97,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Started the Project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started the Project" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -88,25 +108,37 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1581690913851" />
-    <state x="614" y="120" key="CommitChangelistDialog2" timestamp="1581691148740">
+    <state x="707" y="381" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1581691863159">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="614" y="120" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1581691148740" />
-    <state width="1877" height="178" key="GridCell.Tab.0.bottom" timestamp="1581691153787">
+    <state x="707" y="381" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1581691863159" />
+    <state x="289" y="120" width="1016" height="810" key="CommitChangelistDialog2" timestamp="1581694332082">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1581691153787" />
-    <state width="1877" height="178" key="GridCell.Tab.0.center" timestamp="1581691153786">
+    <state x="289" y="120" width="1016" height="810" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1581694332082" />
+    <state width="938" height="270" key="GridCell.Tab.0.bottom" timestamp="1581694355233">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1581691153786" />
-    <state width="1877" height="178" key="GridCell.Tab.0.left" timestamp="1581691153785">
+    <state width="938" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1581694355233" />
+    <state width="938" height="270" key="GridCell.Tab.0.center" timestamp="1581694355233">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1581691153785" />
-    <state width="1877" height="178" key="GridCell.Tab.0.right" timestamp="1581691153786">
+    <state width="938" height="270" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1581694355233" />
+    <state width="938" height="270" key="GridCell.Tab.0.left" timestamp="1581694355233">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1581691153786" />
+    <state width="938" height="270" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1581694355233" />
+    <state width="938" height="270" key="GridCell.Tab.0.right" timestamp="1581694355233">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="270" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1581694355233" />
+    <state x="0" y="0" width="1920" height="1050" key="SettingsEditor" timestamp="1581693519819">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="0" y="0" width="1920" height="1050" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1581693519819" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1581691211249">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1581691211249" />
   </component>
 </project>
