@@ -1,7 +1,12 @@
 package main;
 
 import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -13,6 +18,41 @@ public class Main extends Application {
         launch(args);
     }
 
+    public static MenuBar generateMenuBar() {
+        MenuBar r = new MenuBar();
+
+
+        //HELP menu
+        Menu menuHelp = new Menu("Help");
+
+        MenuItem helpAbout = new MenuItem("About");
+        helpAbout.setOnAction(e -> windowAbout());
+
+        menuHelp.getItems().addAll(helpAbout);
+
+        //ADDING
+
+        r.getMenus().addAll(menuHelp);
+
+        return r;
+    }
+
+    public static void windowAbout() {
+        Stage stage = new Stage();
+
+        BorderPane content = new BorderPane();
+
+        TextArea info = new TextArea();
+        info.setEditable(false);
+        info.setText("DDO Manager Version 0.0.1");
+
+        content.setCenter(info);
+
+        stage.setScene(new Scene(content));
+        stage.show();
+    }
+
+    @Override
     public void start(Stage stage) {
         stage.setTitle("DDO Manager");
 
@@ -23,19 +63,14 @@ public class Main extends Application {
             Settings.save();
         });
 
+        //Initialize the UI
+
+        BorderPane content = new BorderPane();
+        content.setTop(generateMenuBar());
+
+        stage.setScene(new Scene(content));
         stage.show();
         stage.setMaximized(true);
     }
 
-    /**
-     * Generates the Menu Bar to be displayed at the top of the screen
-     *
-     * @return
-     */
-    private static MenuBar getMenuBar() {
-        MenuBar r = new MenuBar();
-
-
-        return r;
-    }
 }
