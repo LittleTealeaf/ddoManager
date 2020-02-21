@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6826edec-2051-4571-b8cf-6013f8c647d5" name="Default Changelist" comment="Started working on the menu bar">
-      <change afterPath="$PROJECT_DIR$/projectPlanning.md" afterDir="false" />
+    <list default="true" id="6826edec-2051-4571-b8cf-6013f8c647d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582209275699</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Started working on Project Planning">
+      <created>1582298239822</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1582298239822</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -122,7 +127,8 @@
     <MESSAGE value="Created Json.java&#10;Creates Settings.java" />
     <MESSAGE value="Opened at another place" />
     <MESSAGE value="Started working on the menu bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started working on the menu bar" />
+    <MESSAGE value="Started working on Project Planning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started working on Project Planning" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -170,9 +176,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="0" width="1920" height="1050" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1581693519819" />
-    <state x="552" y="285" key="Vcs.Push.Dialog.v2" timestamp="1582209283166">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="393" y="182" width="804" height="525" key="Vcs.Push.Dialog.v2" timestamp="1582298252206">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
+    <state x="393" y="182" width="804" height="525" key="Vcs.Push.Dialog.v2/0.0.1366.742@0.0.1366.742" timestamp="1582298252206" />
     <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1581694369420" />
     <state x="552" y="285" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1582209283166" />
     <state x="342" y="201" key="new project wizard" timestamp="1582209326507">
