@@ -4,6 +4,7 @@ public class Settings {
 
     public static boolean startMaximized = true;
 
+
     public Settings() {}
 
     public static void load() {
