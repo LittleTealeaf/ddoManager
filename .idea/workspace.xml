@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6826edec-2051-4571-b8cf-6013f8c647d5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +45,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -121,13 +123,15 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1581690913851" />
-    <state x="707" y="381" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1581691863159">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="503" y="269" width="522" height="285" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1582567104260">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
+    <state x="503" y="269" width="522" height="285" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.742@0.0.1366.742" timestamp="1582567104260" />
     <state x="707" y="381" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1581691863159" />
-    <state x="289" y="120" width="1016" height="810" key="CommitChangelistDialog2" timestamp="1581694877210">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="206" y="85" width="1016" height="810" key="CommitChangelistDialog2" timestamp="1582567524250">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
+    <state x="206" y="85" key="CommitChangelistDialog2/0.0.1366.742@0.0.1366.742" timestamp="1582567524250" />
     <state x="289" y="120" width="1016" height="810" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1581694877210" />
     <state width="1877" height="178" key="GridCell.Tab.0.bottom" timestamp="1581694906245">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -145,9 +149,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="178" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1581694906245" />
-    <state x="0" y="0" width="1920" height="1050" key="SettingsEditor" timestamp="1581693519819">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="162" y="15" width="1204" height="727" key="SettingsEditor" timestamp="1582567139417">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
+    <state x="162" y="15" width="1204" height="727" key="SettingsEditor/0.0.1366.742@0.0.1366.742" timestamp="1582567139417" />
     <state x="0" y="0" width="1920" height="1050" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1581693519819" />
     <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1581694879407">
       <screen x="0" y="0" width="1920" height="1050" />
