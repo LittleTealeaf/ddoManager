@@ -9,7 +9,8 @@ public class Item {
 
 
     public enum BindStatus {
-        BTA("Bound to Account", "BTA"), BTC("Bound to Character", "BTC");
+        BTA("Bound to Account", "BTA"),
+        BTC("Bound to Character", "BTC");
 
         public String fullName;
         public String shortName;
@@ -21,7 +22,17 @@ public class Item {
     }
 
     public enum EquipSlot {
-        GOGGLES("Goggles"), HELMET("Helmet"), NECKLACE("Necklace"), TRINKET("Trinket"), ARMOR("Armor"), CLOAK("Cloak"), BRACERS("Bracers"), BELT("Belt"), RING("Ring"), BOOTS("Boots"), GLOVES("Gloves");
+        GOGGLES("Goggles"),
+        HELMET("Helmet"),
+        NECKLACE("Necklace"),
+        TRINKET("Trinket"),
+        ARMOR("Armor"),
+        CLOAK("Cloak"),
+        BRACERS("Bracers"),
+        BELT("Belt"),
+        RING("Ring"),
+        BOOTS("Boots"),
+        GLOVES("Gloves");
 
         public String name;
 
