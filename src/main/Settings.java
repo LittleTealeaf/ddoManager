@@ -4,7 +4,11 @@ public class Settings {
 
     public static boolean startMaximized = true;
 
-    public static WikiSource defaultSource = WikiSource.COMPENDIUM;
+    public static boolean showCrashReports = true;
+
+    public static WikiSource defaultSource = WikiSource.COMPENDIUM; //do I really need this?
+
+    public static OpenedTab lastOpenedTab = OpenedTab.CHARACTERS;
 
 
     public Settings() {}
@@ -35,6 +39,19 @@ public class Settings {
 
         public String getName() {
             return name;
+        }
+    }
+
+    /**
+     * Tab that was last left opened
+     */
+    public enum OpenedTab {
+        CHARACTERS(0),ITEMS(1),RAIDS(2);
+
+        public int index;
+
+        OpenedTab(int ind) {
+            index = ind;
         }
     }
 }
