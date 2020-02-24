@@ -14,3 +14,11 @@
     * Auto-Import from the `/quest` command
     * Built-In Calendar for upcoming raids, list of what raids you would be able to run without leaving yourself without a character for raids
     * Support for having Timers (checking if you will be using a timer for a set raid)
+
+#### Nitty Gritty Stuff:
+
+* Items
+    * Name
+    * Min Level
+    * Bind Status
+    * Bonuses
