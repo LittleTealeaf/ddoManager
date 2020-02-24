@@ -1,6 +1,7 @@
-##Idea
+## Idea
 
-####Planner for the following
+#### Planner for the following
+
 * Character Management
     * Managing characters
     * Character's build (having a text area for build details, not a full build planner)
