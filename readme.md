@@ -20,6 +20,6 @@
         - Also can be an empty item, maybe forgo the custom-item management? for item references can just have additional enhancements to it?
 - Gearset Manager
     - Can filter to just items in your inventory
-        - Set to filter for items available to a specific item
+        - Set to filter for items available to a specific character
 - Build Manager <i>FUTURE PROJECT</i>
     - Managing / Editing Builds

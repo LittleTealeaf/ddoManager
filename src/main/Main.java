@@ -8,6 +8,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import scraping.VaultOfKundarak;
 
 public class Main extends Application {
 
@@ -16,6 +17,8 @@ public class Main extends Application {
         Settings.load();
         Variables.load();
         DebugPrompt.setCrashReporting();
+
+        VaultOfKundarak.generateItem("");
 
         launch(args);
     }

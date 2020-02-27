@@ -1,11 +1,15 @@
 package classes;
 
+import java.util.List;
+
 public class Item {
 
-    String name = "";
-    int minLevel = 1;
-    BindStatus bindStatus = BindStatus.BTA;
-    String bonuses = "";
+    private String name = "";
+    private int minLevel = 1;
+    private BindStatus bindStatus = BindStatus.BTA;
+    private String bonuses = "";
+    private List<Enhancement> enhancements = null;
+
 
     public Item() {}
 
@@ -47,5 +51,45 @@ public class Item {
         EquipSlot(String name) {
             this.name = name;
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getMinLevel() {
+        return minLevel;
+    }
+
+    public void setMinLevel(int minLevel) {
+        this.minLevel = minLevel;
+    }
+
+    public BindStatus getBindStatus() {
+        return bindStatus;
+    }
+
+    public void setBindStatus(BindStatus bindStatus) {
+        this.bindStatus = bindStatus;
+    }
+
+    public String getBonuses() {
+        return bonuses;
+    }
+
+    public void setBonuses(String bonuses) {
+        this.bonuses = bonuses;
+    }
+
+    public List<Enhancement> getEnhancements() {
+        return enhancements;
+    }
+
+    public void setEnhancements(List<Enhancement> enhancements) {
+        this.enhancements = enhancements;
     }
 }
