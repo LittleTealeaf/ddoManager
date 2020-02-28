@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6826edec-2051-4571-b8cf-6013f8c647d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581694878057</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Re-considered project's scope">
+      <created>1582741006964</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582741006964</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -111,7 +118,8 @@
     <MESSAGE value="Started the Project" />
     <MESSAGE value="Created Json.java&#10;Creates Settings.java" />
     <MESSAGE value="Added Javadocs to Json.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Javadocs to Json.java" />
+    <MESSAGE value="Re-considered project's scope" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-considered project's scope" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -126,11 +134,12 @@
     </state>
     <state x="503" y="269" width="522" height="285" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.742@0.0.1366.742" timestamp="1582567104260" />
     <state x="707" y="381" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1581691863159" />
-    <state x="206" y="85" width="1016" height="810" key="CommitChangelistDialog2" timestamp="1582567524250">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state x="290" y="0" width="1429" height="1160" key="CommitChangelistDialog2" timestamp="1582741005122">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="206" y="85" key="CommitChangelistDialog2/0.0.1366.742@0.0.1366.742" timestamp="1582567524250" />
     <state x="289" y="120" width="1016" height="810" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1581694877210" />
+    <state x="290" y="0" width="1429" height="1160" key="CommitChangelistDialog2/0.0.1920.1160@0.0.1920.1160" timestamp="1582741005122" />
     <state width="1877" height="178" key="GridCell.Tab.0.bottom" timestamp="1581694906245">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -152,9 +161,14 @@
     </state>
     <state x="162" y="15" width="1204" height="727" key="SettingsEditor/0.0.1366.742@0.0.1366.742" timestamp="1582567139417" />
     <state x="0" y="0" width="1920" height="1050" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1581693519819" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1581694879407">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="552" y="285" key="Vcs.Push.Dialog.v2" timestamp="1582741009154">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1581694879407" />
+    <state x="552" y="285" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1582741009154" />
+    <state x="656" y="405" key="com.intellij.ide.util.TipDialog" timestamp="1582741060160">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="656" y="405" key="com.intellij.ide.util.TipDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1582741060160" />
   </component>
 </project>
