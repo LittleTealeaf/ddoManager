@@ -2,6 +2,8 @@
 
 ### Tabs:
 
+**No longer can use VOK, so will need to yet again re-work the project scope**
+
 - Character Manager
     - Accounts
         - Characters in each account

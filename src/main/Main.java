@@ -70,11 +70,6 @@ public class Main extends Application {
         BorderPane content = new BorderPane();
         content.setTop(generateMenuBar());
 
-        TextArea debug = new TextArea();
-        debug.setText(Internet.getContents("https://vaultofkundarak.com/item/Legendary_Bracers_of_the_Fallen_Hero"));
-        debug.setWrapText(true);
-        content.setCenter(debug);
-
         stage.setScene(new Scene(content));
         stage.show();
         stage.setMaximized(true);
