@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6826edec-2051-4571-b8cf-6013f8c647d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scraping/Internet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scraping/VaultOfKundarak.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582899800811</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Welp, no VOK">
+      <created>1582901809758</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1582901809758</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -134,7 +145,8 @@
     <MESSAGE value="Added Javadocs to Json.java" />
     <MESSAGE value="Re-considered project's scope" />
     <MESSAGE value="OAIWEF" />
-    <option name="LAST_COMMIT_MESSAGE" value="OAIWEF" />
+    <MESSAGE value="Welp, no VOK" />
+    <option name="LAST_COMMIT_MESSAGE" value="Welp, no VOK" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -154,12 +166,12 @@
     </state>
     <state x="503" y="269" width="522" height="285" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.742@0.0.1366.742" timestamp="1582567104260" />
     <state x="707" y="381" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1581691863159" />
-    <state x="290" y="0" width="1429" height="1160" key="CommitChangelistDialog2" timestamp="1582901727978">
+    <state x="281" y="0" width="1429" height="1129" key="CommitChangelistDialog2" timestamp="1582901825578">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="206" y="85" key="CommitChangelistDialog2/0.0.1366.742@0.0.1366.742" timestamp="1582567524250" />
     <state x="289" y="120" width="1016" height="810" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1581694877210" />
-    <state x="290" y="0" width="1429" height="1160" key="CommitChangelistDialog2/0.0.1920.1160@0.0.1920.1160" timestamp="1582901727978" />
+    <state x="281" y="0" width="1429" height="1129" key="CommitChangelistDialog2/0.0.1920.1160@0.0.1920.1160" timestamp="1582901825578" />
     <state width="314" height="493" key="GridCell.Tab.0.bottom" timestamp="1582901179673">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -185,11 +197,11 @@
     </state>
     <state x="162" y="15" width="1204" height="727" key="SettingsEditor/0.0.1366.742@0.0.1366.742" timestamp="1582567139417" />
     <state x="0" y="0" width="1920" height="1050" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1581693519819" />
-    <state x="552" y="285" key="Vcs.Push.Dialog.v2" timestamp="1582899802355">
+    <state x="552" y="285" key="Vcs.Push.Dialog.v2" timestamp="1582901813639">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1581694879407" />
-    <state x="552" y="285" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1582899802355" />
+    <state x="552" y="285" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1582901813639" />
     <state x="656" y="405" key="com.intellij.ide.util.TipDialog" timestamp="1582898470432">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
