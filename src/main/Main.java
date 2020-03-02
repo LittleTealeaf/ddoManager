@@ -1,15 +1,24 @@
 package main;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main extends Application {
+
+    public static final String VERSION = "0.0.1";
 
     public static void main(String[] args) {
         Json.load();
@@ -41,14 +50,27 @@ public class Main extends Application {
 
     public static void windowAbout() {
         Stage stage = new Stage();
+        stage.setTitle("About DDO Manager " + VERSION);
 
+        //Create Content Center
         BorderPane content = new BorderPane();
+        content.setPadding(new Insets(10));
 
-        TextArea info = new TextArea();
-        info.setEditable(false);
-        info.setText("DDO Manager Version 0.0.1");
+        String aboutText = "Dungeons & Dragons: Online Manager; Version " + VERSION + "\n\n";
 
-        content.setCenter(info);
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream("contributors")));
+            String line;
+            while(!(line = reader.readLine()).contentEquals("")) {
+                aboutText+=line + "\n";
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+            System.out.println("Failed Attempt to grab resources");
+        }
+
+        content.setCenter(new Text(aboutText));
+
 
         stage.setScene(new Scene(content));
         stage.show();
