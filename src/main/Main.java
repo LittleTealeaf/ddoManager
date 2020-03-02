@@ -3,18 +3,15 @@ package main;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class Main extends Application {
 
@@ -51,25 +48,21 @@ public class Main extends Application {
     public static void windowAbout() {
         Stage stage = new Stage();
         stage.setTitle("About DDO Manager " + VERSION);
+        stage.setWidth(400);
 
-        //Create Content Center
-        BorderPane content = new BorderPane();
+        GridPane content = new GridPane();
+        content.setHgap(7.5);
+        content.setVgap(7.5);
         content.setPadding(new Insets(10));
 
-        String aboutText = "Dungeons & Dragons: Online Manager; Version " + VERSION + "\n\n";
+        //Header for Version and Links
+        Text headerVersion = new Text("Version and Links");
+        headerVersion.setFont(Font.font("Ubuntu", 20));
+        content.add(headerVersion, 0, 0, 2, 1);
 
-        try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream("contributors")));
-            String line;
-            while(!(line = reader.readLine()).contentEquals("")) {
-                aboutText+=line + "\n";
-            }
-        } catch(Exception e) {
-            e.printStackTrace();
-            System.out.println("Failed Attempt to grab resources");
-        }
-
-        content.setCenter(new Text(aboutText));
+        //Versions and Links
+        Text tVersion = new Text("Version " + VERSION);
+        Hyperlink linkGithub = new Hyperlink("Github");
 
 
         stage.setScene(new Scene(content));
