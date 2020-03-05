@@ -15,7 +15,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main extends Application {
@@ -75,7 +74,7 @@ public class Main extends Application {
 
         int rowPos = 1;
         final char SEP = '-';
-        List<String> temp = new ArrayList<String>();
+        List<String> temp = new ArrayList<>();
         for(String line : getContributors()) {
             if(line.toCharArray()[0] == SEP) {
                 if(temp.size()  > 1) {
@@ -104,13 +103,13 @@ public class Main extends Application {
             try {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream("contributors")));
 
-                contributors = new ArrayList<String>();
-                String line = "";
+                contributors = new ArrayList<>();
+                String line;
                 while ((line = reader.readLine()) != null) {
                     contributors.add(line);
                 }
                 contributors.add("-asf");
-            } catch (IOException e) {}
+            } catch (IOException ignored) {}
         }
 
         return contributors;

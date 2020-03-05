@@ -46,13 +46,13 @@ public class DebugPrompt {
         alert.setHeaderText("We have encountered an error!");
         alert.setContentText("You can either ignore this error, or report it!");
 
-        String exceptionText = "";
-        for(String s : lines) exceptionText += s + "\n";
-        final String exception = exceptionText;
+        StringBuilder exceptionText = new StringBuilder();
+        for (String s : lines) exceptionText.append(s).append("\n");
+        final String exception = exceptionText.toString();
 
         Label label = new Label("The exception stacktrace was:");
 
-        TextArea textArea = new TextArea(exceptionText);
+        TextArea textArea = new TextArea(exceptionText.toString());
         textArea.setEditable(false);
         textArea.setWrapText(true);
 
@@ -64,7 +64,7 @@ public class DebugPrompt {
 
             try {
                 java.awt.Desktop.getDesktop().browse(new URI("https://github.com/LittleTealeaf/ddoManager/issues/new?assignees=LittleTealeaf&labels=crash&template=crash_report.md&title=Crash+Report"));
-            } catch(Exception exce) {}
+            } catch (Exception ignored) {}
 
         });
 
