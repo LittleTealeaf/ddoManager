@@ -1,16 +1,7 @@
 ---
-name: crash report
-about: 'Report '
-title: "[CRASH] "
-labels: bug
-assignees: LittleTealeaf
-
----
-
----
 name: Crash report
 about: Create a report to help us improve
-title: 'Crash Report'
+title: '[CRASH] '
 labels: 'crash'
 assignees: 'LittleTealeaf'
 
