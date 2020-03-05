@@ -15,6 +15,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main extends Application {
@@ -54,7 +55,6 @@ public class Main extends Application {
     public static void windowAbout() {
         Stage stage = new Stage();
         stage.setTitle("About DDO Manager " + VERSION);
-        stage.setWidth(400);
 
         GridPane content = new GridPane();
         content.setHgap(7.5);
@@ -71,34 +71,41 @@ public class Main extends Application {
         content.add(crashDialogs, 1, 1);
 
         //Contributors File Section:
-        List<List<String>> sections = new ArrayList<List<String>>();
-
-        List<String> tempList = new ArrayList<String>();
-        for (String line : getContributors()) {
-            if (line.toCharArray()[0] != '\t') {
-                sections.add(tempList);
-                tempList = new ArrayList<String>();
-                tempList.add(line);
-            } else {
-                tempList.add(line.substring(1));
-            }
-        }
+//        List<List<String>> sections = new ArrayList<List<String>>();
+//
+//        List<String> tempList = new ArrayList<String>();
+//        for (String line : getContributors()) {
+//            if (line.toCharArray()[0] != '\t') {
+//                sections.add(tempList);
+//                tempList = new ArrayList<String>();
+//                tempList.add(line);
+//            } else {
+//                tempList.add(line.substring(1));
+//            }
+//        }
 
         Text headerContributors = new Text("Contributors");
         content.add(headerContributors, 2, 0, 2, 1);
 
-        //BUG
-
         int rowPos = 1;
-        for (List<String> section : sections) {
-            Text sectionHeader = new Text(section.get(0));
-            content.add(sectionHeader, 2, rowPos, 1, section.size() - 1);
+        final char SEP = '-';
+        List<String> temp = new ArrayList<String>();
+        for(String line : getContributors()) {
+            if(line.toCharArray()[0] == SEP) {
+                if(temp.size()  > 1) {
+                    content.add(new Text(temp.get(0)),2,rowPos,1,temp.size() - 1);
 
-            for (int i = 1; i < section.size(); i++) {
-                Text sectionItem = new Text(section.get(i));
-                content.add(sectionHeader, 3, rowPos + i - 1);
+                    for(int i = 1; i < temp.size(); i++) {
+                        content.add(new Text(temp.get(i)),3,rowPos + i - 1);
+                    }
+                    rowPos+=temp.size() - 1;
+                }
+                temp = new ArrayList<>();
+                temp.add(line.substring(1));
+            } else {
+                temp.add(line);
             }
-            rowPos += section.size() - 1;
+
         }
 
 
@@ -116,8 +123,10 @@ public class Main extends Application {
                 while ((line = reader.readLine()) != null) {
                     contributors.add(line);
                 }
+                contributors.add("-asf");
             } catch (IOException e) {}
         }
+
         return contributors;
     }
 
