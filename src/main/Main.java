@@ -70,20 +70,6 @@ public class Main extends Application {
         Text crashDialogs = new Text("Crash Dialogs: " + (Settings.showCrashReports ? "Enabled" : "Disabled"));
         content.add(crashDialogs, 1, 1);
 
-        //Contributors File Section:
-//        List<List<String>> sections = new ArrayList<List<String>>();
-//
-//        List<String> tempList = new ArrayList<String>();
-//        for (String line : getContributors()) {
-//            if (line.toCharArray()[0] != '\t') {
-//                sections.add(tempList);
-//                tempList = new ArrayList<String>();
-//                tempList.add(line);
-//            } else {
-//                tempList.add(line.substring(1));
-//            }
-//        }
-
         Text headerContributors = new Text("Contributors");
         content.add(headerContributors, 2, 0, 2, 1);
 
