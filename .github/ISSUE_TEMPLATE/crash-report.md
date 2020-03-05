@@ -1,11 +1,12 @@
 ---
 name: Crash report
 about: Create a report to help us improve
-title: '[CRASH] '
-labels: 'crash'
-assignees: 'LittleTealeaf'
+title: "[CRASH] "
+labels: ''
+assignees: LittleTealeaf
 
 ---
+
 **Background**
 What were you just doing when this happened?
 
