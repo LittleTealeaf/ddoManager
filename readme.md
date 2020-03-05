@@ -12,3 +12,7 @@
 - Inventory
     - Items
         - Sorted into each character
+- Saves Management
+    - Separate Instances, has default instance? (or opens just previous account)
+    - Also swappable between servers
+    - Dropdown: one for accounts another for servers
