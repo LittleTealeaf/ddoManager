@@ -13,6 +13,9 @@ public class Settings {
 
     public Settings() {}
 
+    /**
+     * Attempts to load the data, and then saves (so any settings not initialized will be saved)
+     */
     public static void load() {
         Json.readObject(true, Settings.class, "Settings.json");
         save();
@@ -37,6 +40,11 @@ public class Settings {
             this.name = name;
         }
 
+        /**
+         * Gets the name of the Wiki Source
+         *
+         * @return Name of the Wiki Source
+         */
         public String getName() {
             return name;
         }

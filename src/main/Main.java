@@ -3,6 +3,7 @@ package main;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -11,14 +12,24 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Main class for the entire application, contains all misc / UI layouts of the application
+ *
+ * @author Tealeaf
+ */
 public class Main extends Application {
 
+    /**
+     * Current version of the program
+     */
     public static final String VERSION = "0.0.1";
 
     private static ArrayList<String> contributors;
@@ -32,6 +43,10 @@ public class Main extends Application {
         launch(args);
     }
 
+    /**
+     * Generates the menu bar
+     * @return Menu Bar to display at the top of the program
+     */
     public static MenuBar generateMenuBar() {
         MenuBar r = new MenuBar();
 
@@ -51,6 +66,9 @@ public class Main extends Application {
         return r;
     }
 
+    /**
+     * Opens the "About" window
+     */
     public static void windowAbout() {
         Stage stage = new Stage();
         stage.setTitle("About DDO Manager " + VERSION);
@@ -69,21 +87,20 @@ public class Main extends Application {
         Text crashDialogs = new Text("Crash Dialogs: " + (Settings.showCrashReports ? "Enabled" : "Disabled"));
         content.add(crashDialogs, 1, 1);
 
-        Text headerContributors = new Text("Contributors");
-        content.add(headerContributors, 2, 0, 2, 1);
 
-        int rowPos = 1;
+        //Contributors
+        int rowPos = 0;
         final char SEP = '-';
         List<String> temp = new ArrayList<>();
-        for(String line : getContributors()) {
-            if(line.toCharArray()[0] == SEP) {
-                if(temp.size()  > 1) {
-                    content.add(new Text(temp.get(0)),2,rowPos,1,temp.size() - 1);
+        for (String line : getContributors()) {
+            if (line.toCharArray()[0] == SEP) {
+                if (temp.size() > 1) {
+                    content.add(new Text(temp.get(0)), 2, rowPos, 1, temp.size() - 1);
 
-                    for(int i = 1; i < temp.size(); i++) {
-                        content.add(new Text(temp.get(i)),3,rowPos + i - 1);
+                    for (int i = 1; i < temp.size(); i++) {
+                        content.add(new Text(temp.get(i)), 3, rowPos + i - 1);
                     }
-                    rowPos+=temp.size() - 1;
+                    rowPos += temp.size() - 1;
                 }
                 temp = new ArrayList<>();
                 temp.add(line.substring(1));
@@ -93,11 +110,22 @@ public class Main extends Application {
 
         }
 
+        //Links
+        Hyperlink linkGithub = new Hyperlink("Github Repository");
+        linkGithub.setOnAction(e -> openLink("https://github.com/LittleTealeaf/paceManager"));
+        content.add(linkGithub, 0, 2);
+
 
         stage.setScene(new Scene(content));
         stage.show();
     }
 
+    /**
+     * Gets the contents of the contributor file, located under resources.
+     * <br>Stores the contents in a private variable in order to prevent fetching the resources too often
+     *
+     * @return List of the contributors file
+     */
     private static List<String> getContributors() {
         if (contributors == null) {
             try {
@@ -134,6 +162,23 @@ public class Main extends Application {
         stage.setScene(new Scene(content));
         stage.show();
         stage.setMaximized(true);
+    }
+
+    /**
+     * Opens a link in the desktop default browser
+     * <br><b>Source:</b> <a href="https://stackoverflow.com/a/10967469">Stackoverflow Answer</a>
+     *
+     * @param url Site URL to directly open
+     */
+    public static void openLink(String url) {
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(new URI(url));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

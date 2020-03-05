@@ -33,4 +33,13 @@ public class RaidTimer {
     public void setTime(ZonedDateTime time) {
         this.time = time;
     }
+
+    public boolean equals(RaidTimer other) {
+        return this.time.equals(other.time) && this.raid.equals(other.raid);
+    }
+
+    @Override
+    public String toString() {
+        return raid + " can be replayed at " + time.toString();
+    }
 }

@@ -12,13 +12,19 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.io.PrintStream;
-import java.net.URI;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
 public class DebugPrompt {
+    /**
+     * Enables the crash-reporting custom script
+     * <p>Whenever a crash or error occurs, it stores the crash error text into a file under the crashlogs folder.</p>
+     * <p>
+     * If {@link Settings#showCrashReports} is true, it will open up a dialog, via {@link #showPrompt(List)}
+     * </p>
+     */
     public static void setCrashReporting() {
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
             e.printStackTrace();
@@ -32,14 +38,20 @@ public class DebugPrompt {
                 stream.print(e.getMessage() + "\n");
                 e.printStackTrace(stream);
 
-                if(Settings.showCrashReports) showPrompt(Files.readAllLines(file.toPath()));
-            } catch(Exception e1) {
+                if (Settings.showCrashReports) showPrompt(Files.readAllLines(file.toPath()));
+            } catch (Exception e1) {
                 e1.printStackTrace();
             }
 
         });
     }
 
+    /**
+     * Displays the prompt of the crash report
+     * <p>This contains a link that will copy the error ({@code lines}) and open up the crash report template</p>
+     *
+     * @param lines Error Report
+     */
     private static void showPrompt(List<String> lines) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Crash Dialog");
@@ -62,10 +74,7 @@ public class DebugPrompt {
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
             clipboard.setContents(stringSelection, null);
 
-            try {
-                java.awt.Desktop.getDesktop().browse(new URI("https://github.com/LittleTealeaf/ddoManager/issues/new?assignees=LittleTealeaf&labels=crash&template=crash_report.md&title=Crash+Report"));
-            } catch (Exception ignored) {}
-
+            Main.openLink("https://github.com/LittleTealeaf/ddoManager/issues/new?assignees=LittleTealeaf&labels=crash&template=crash-report.md&title=%5BCRASH%5D+");
         });
 
         Label warning = new Label("Warning: This will use your clipboard");
