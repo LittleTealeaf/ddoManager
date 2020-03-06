@@ -54,10 +54,14 @@ public class Main extends Application {
         //HELP menu
         Menu menuHelp = new Menu("Help");
 
+        MenuItem helpSettings = new MenuItem("Settings");
+        helpSettings.setOnAction(e -> Settings.openSettings());
+
         MenuItem helpAbout = new MenuItem("About");
         helpAbout.setOnAction(e -> windowAbout());
 
-        menuHelp.getItems().addAll(helpAbout);
+
+        menuHelp.getItems().addAll(helpSettings, helpAbout);
 
         //ADDING
 
