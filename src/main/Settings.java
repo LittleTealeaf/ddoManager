@@ -174,6 +174,7 @@ public class Settings {
         }
     }
 
+    //TODO comment this
     public enum Theme {
         LIGHT("Default Theme", null),
         DARK("Dark Theme", "darktheme.css");
