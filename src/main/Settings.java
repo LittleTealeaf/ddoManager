@@ -175,9 +175,7 @@ public class Settings {
 
     public enum Theme {
         LIGHT("Default Theme", null),
-        DARK("Dark Theme", "darktheme.css"),
-        DUKKEDARK("Dukke Dark Theme", "dukkeDarkTheme.css"),
-        DUKKELIGHT("Dukke Light Theme", "dukkeLightTheme.css");
+        DARK("Dark Theme", "darktheme.css");
 
         private static List<Scene> appliedThemes = new ArrayList<>();
         private String fileName;
