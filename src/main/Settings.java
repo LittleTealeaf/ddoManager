@@ -36,6 +36,7 @@ public class Settings {
     public static void load() {
         Json.readObject(true, Settings.class, "Settings.json");
         save();
+        if (theme == null) theme = Theme.LIGHT;
     }
 
     public static void save() {
