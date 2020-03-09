@@ -1,14 +1,13 @@
 package main;
 
+import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -20,17 +19,13 @@ import java.util.List;
  */
 public class Settings {
 
-    /**
-     * Internal Setting
-     */
+    //INTERNAL SETTINGS
     public static boolean startMaximized = true;
-
-    public static boolean showCrashReports = true;
-
-    /**
-     * Internal Setting
-     */
     public static OpenedTab lastOpenedTab = OpenedTab.CHARACTERS;
+
+    //USER MODIFIED SETTINGS
+    public static boolean showCrashReports = true;
+    public static Theme theme = Theme.DARK;
 
 
     public Settings() {}
@@ -53,12 +48,14 @@ public class Settings {
     public static void openSettings() {
         Stage stage = new Stage();
         stage.setTitle("Settings");
+        stage.setWidth(500);
 
         //Get the Settings
         List<SettingObj> sobjs = getSettingObjects();
 
         //Create the Categories
         ListView<String> category = new ListView<>();
+        category.setPrefWidth(150);
         for (SettingObj obj : sobjs) {
             if (!category.getItems().contains(obj.category)) {
                 category.getItems().add(obj.category);
@@ -112,15 +109,19 @@ public class Settings {
             }
         });
 
-
-        HBox center = new HBox(category, sectionDisplay);
-
+        HBox center = new HBox(new VBox(filter, category), sectionDisplay);
 
         Scene scene = new Scene(center);
+        Settings.theme.applyTheme(scene);
         stage.setScene(scene);
         stage.show();
     }
 
+    /**
+     * Gets all the setting objects, each one with a given category, node, and keywords
+     *
+     * @return List of {@link SettingObj SettingObjs}
+     */
     private static List<SettingObj> getSettingObjects() {
         List<SettingObj> settingObs = new ArrayList<>();
 
@@ -129,15 +130,20 @@ public class Settings {
         sShowCrashReports.setSelected(showCrashReports);
         sShowCrashReports.selectedProperty().addListener((e, o, n) -> {
             showCrashReports = n.booleanValue();
+            save();
         });
         sShowCrashReports.setTooltip(new Tooltip("When set to true, will display a crash screen with options to create a bug report on Github"));
-        settingObs.add(new SettingObj("Show Crash Reports", false, sShowCrashReports, "Advanced", "Github Crash Report Crash Log Debug"));
+        settingObs.add(new SettingObj("Show Crash Reports", false, sShowCrashReports, "Advanced", "github crash report crash log debug"));
 
-        Text testA = new Text("Test A");
-        settingObs.add(new SettingObj("Test A", testA, "Advanced", "Test Debug Development"));
-
-        Text testB = new Text("Test B");
-        settingObs.add(new SettingObj("Test B", testB, "Debug", "Test Debug Development"));
+        ComboBox<Theme> sTheme = new ComboBox<Theme>();
+        sTheme.setItems(FXCollections.observableArrayList(Theme.values()));
+        sTheme.getSelectionModel().select(theme);
+        sTheme.getSelectionModel().selectedItemProperty().addListener((e, o, n) -> {
+            theme = n;
+            save();
+            Theme.updateTheme();
+        });
+        settingObs.add(new SettingObj("Theme", true, sTheme, "Appearance", "theme color display style appearance"));
 
         return settingObs;
     }
@@ -164,6 +170,49 @@ public class Settings {
          */
         public String getName() {
             return name;
+        }
+    }
+
+    public enum Theme {
+        LIGHT("Default Theme", null),
+        DARK("Dark Theme", "darktheme.css"),
+        DUKKEDARK("Dukke Dark Theme", "dukkeDarkTheme.css"),
+        DUKKELIGHT("Dukke Light Theme", "dukkeLightTheme.css");
+
+        private static List<Scene> appliedThemes = new ArrayList<>();
+        private String fileName;
+        private String displayName;
+
+
+        Theme(String displayName, String fileName) {
+            this.displayName = displayName;
+            this.fileName = fileName;
+        }
+
+        public static void updateTheme() {
+            for (Scene scene : appliedThemes) {
+                theme.applyTheme(scene);
+            }
+        }
+
+        public String getFileName() {
+            return fileName;
+        }
+
+        public String getDisplayName() {
+            return displayName;
+        }
+
+        public String toString() {
+            return getDisplayName();
+        }
+
+        public void applyTheme(Scene scene) {
+            scene.getStylesheets().clear();
+            if (fileName != null) {
+                scene.getStylesheets().add(ClassLoader.getSystemResource(fileName).toExternalForm());
+            }
+            if (!appliedThemes.contains(scene)) appliedThemes.add(scene);
         }
     }
 
@@ -232,12 +281,26 @@ public class Settings {
          * @return {@code True} if this setting matches the filter<br>{@code False} if it does not
          */
         public boolean contains(String contents) {
-            return contents.contentEquals("") || name.contains(contents) || keyWords.contains(contents) || category.contains(contents);
+            return contents.contentEquals("") || name.contains(contents.toLowerCase()) || keyWords.contains(contents.toLowerCase()) || category.contains(contents.toLowerCase());
         }
 
         @Override
+        /**
+         * Returns a String object that contains the name and it's category
+         * @return String representing the setting's name and category
+         */
         public String toString() {
             return name + " (" + category + ")";
+        }
+
+        /**
+         * Returns if the object is equal to another object
+         *
+         * @param other Other SettingObj to compare
+         * @return {@code True} if they are equal<br>{@code False} if they are not equal
+         */
+        public boolean equals(SettingObj other) {
+            return this.name.equals(other.name) && this.node.equals(other.node) && this.category.equals(other.category) && this.keyWords.equals(other.keyWords);
         }
     }
 }

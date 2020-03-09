@@ -32,6 +32,8 @@ public class Main extends Application {
      */
     public static final String VERSION = "0.0.1";
 
+    public static List<Scene> loadedScenes = new ArrayList<Scene>();
+
     private static ArrayList<String> contributors;
 
     public static void main(String[] args) {
@@ -119,8 +121,10 @@ public class Main extends Application {
         linkGithub.setOnAction(e -> openLink("https://github.com/LittleTealeaf/paceManager"));
         content.add(linkGithub, 0, 2);
 
+        Scene scene = new Scene(content);
+        Settings.theme.applyTheme(scene);
 
-        stage.setScene(new Scene(content));
+        stage.setScene(scene);
         stage.show();
     }
 
@@ -148,6 +152,9 @@ public class Main extends Application {
     }
 
     @Override
+    /**
+     * Generates the main user interface
+     */
     public void start(Stage stage) {
         stage.setTitle("DDO Manager");
 
@@ -163,7 +170,11 @@ public class Main extends Application {
         BorderPane content = new BorderPane();
         content.setTop(generateMenuBar());
 
-        stage.setScene(new Scene(content));
+
+        Scene scene = new Scene(content);
+        Settings.theme.applyTheme(scene);
+
+        stage.setScene(scene);
         stage.show();
         stage.setMaximized(true);
     }
