@@ -25,7 +25,7 @@ public class Settings {
 
     //USER MODIFIED SETTINGS
     public static boolean showCrashReports = true;
-    public static Theme theme = Theme.DARK;
+    public static Theme theme = Theme.LIGHT;
 
 
     public Settings() {}
