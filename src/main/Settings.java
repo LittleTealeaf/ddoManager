@@ -174,9 +174,21 @@ public class Settings {
         }
     }
 
-    //TODO comment this
+
+    /**
+     * These enumerators represent paths to each specific theme.
+     * <p>{@code LIGHT} represents the default {@code javafx} theme.</p>
+     *
+     * @author Tealeaf
+     */
     public enum Theme {
+        /**
+         * Default {@code javafx} theme
+         */
         LIGHT("Default Theme", null),
+        /**
+         * Dark Theme, source forgotten
+         */
         DARK("Dark Theme", "darktheme.css");
 
         private static List<Scene> appliedThemes = new ArrayList<>();
@@ -189,24 +201,41 @@ public class Settings {
             this.fileName = fileName;
         }
 
+        /**
+         * Updates all windows opened with the given scene
+         *
+         * @apiNote <i>Note: scenes that have not been initialized with the {@link Theme#applyTheme(Scene)} or elements that have a custom style will not be updated</i>
+         */
         public static void updateTheme() {
             for (Scene scene : appliedThemes) {
                 theme.applyTheme(scene);
             }
         }
 
+        /**
+         * Gets the resource file name of the theme
+         *
+         * @return File Name to put into a {@link ClassLoader#getSystemResource(String)}
+         */
         public String getFileName() {
             return fileName;
         }
 
-        public String getDisplayName() {
+        @Override
+        /**
+         * Returns a human readable name of the theme
+         * @return Human-Readable value of the theme
+         */
+        public String toString() {
             return displayName;
         }
 
-        public String toString() {
-            return getDisplayName();
-        }
-
+        /**
+         * <p>Applies the current theme to a particular scene class</p>
+         * <p>The scene will be added to the referenced list of scenes to be updated in {@link #updateTheme()} whenever the theme updates</p>
+         *
+         * @param scene Scene to configrue with the user set theme
+         */
         public void applyTheme(Scene scene) {
             scene.getStylesheets().clear();
             if (fileName != null) {
