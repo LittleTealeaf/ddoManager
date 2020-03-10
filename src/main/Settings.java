@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Tealeaf
@@ -322,14 +323,20 @@ public class Settings {
             return name + " (" + category + ")";
         }
 
+        @Override
         /**
-         * Returns if the object is equal to another object
-         *
-         * @param other Other SettingObj to compare
-         * @return {@code True} if they are equal<br>{@code False} if they are not equal
+         * Compares whether or not this SettingObj's values equals a given object
          */
-        public boolean equals(SettingObj other) {
-            return this.name.equals(other.name) && this.node.equals(other.node) && this.category.equals(other.category) && this.keyWords.equals(other.keyWords);
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            SettingObj that = (SettingObj) o;
+            return showName == that.showName &&
+                    Objects.equals(name, that.name) &&
+                    Objects.equals(node, that.node) &&
+                    Objects.equals(category, that.category) &&
+                    Objects.equals(keyWords, that.keyWords);
+
         }
     }
 }
