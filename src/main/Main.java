@@ -14,11 +14,11 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Main class for the entire application, contains all misc / UI layouts of the application
@@ -32,7 +32,7 @@ public class Main extends Application {
      */
     public static final String VERSION = "0.0.1";
 
-    public static List<Scene> loadedScenes = new ArrayList<Scene>();
+    public static List<Scene> loadedScenes = new ArrayList<>();
 
     private static ArrayList<String> contributors;
 
@@ -137,7 +137,7 @@ public class Main extends Application {
     private static List<String> getContributors() {
         if (contributors == null) {
             try {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream("contributors")));
+                BufferedReader reader = new BufferedReader(new InputStreamReader(Objects.requireNonNull(ClassLoader.getSystemResourceAsStream("contributors"))));
 
                 contributors = new ArrayList<>();
                 String line;
@@ -145,16 +145,13 @@ public class Main extends Application {
                     contributors.add(line);
                 }
                 contributors.add("-asf");
-            } catch (IOException ignored) {}
+            } catch (Exception ignored) {}
         }
 
         return contributors;
     }
 
     @Override
-    /**
-     * Generates the main user interface
-     */
     public void start(Stage stage) {
         stage.setTitle("DDO Manager");
 

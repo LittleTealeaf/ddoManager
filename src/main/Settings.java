@@ -131,13 +131,13 @@ public class Settings {
         CheckBox sShowCrashReports = new CheckBox("Show Crash Reports");
         sShowCrashReports.setSelected(showCrashReports);
         sShowCrashReports.selectedProperty().addListener((e, o, n) -> {
-            showCrashReports = n.booleanValue();
+            showCrashReports = n;
             save();
         });
         sShowCrashReports.setTooltip(new Tooltip("When set to true, will display a crash screen with options to create a bug report on Github"));
         settingObs.add(new SettingObj("Show Crash Reports", false, sShowCrashReports, "Advanced", "github crash report crash log debug"));
 
-        ComboBox<Theme> sTheme = new ComboBox<Theme>();
+        ComboBox<Theme> sTheme = new ComboBox<>();
         sTheme.setItems(FXCollections.observableArrayList(Theme.values()));
         sTheme.getSelectionModel().select(theme);
         sTheme.getSelectionModel().selectedItemProperty().addListener((e, o, n) -> {
@@ -204,8 +204,7 @@ public class Settings {
 
         /**
          * Updates all windows opened with the given scene
-         *
-         * @apiNote <i>Note: scenes that have not been initialized with the {@link Theme#applyTheme(Scene)} or elements that have a custom style will not be updated</i>
+         * <p><i>Note: scenes that have not been initialized with the {@link Theme#applyTheme(Scene)} or elements that have a custom style will not be updated</i></p>
          */
         public static void updateTheme() {
             for (Scene scene : appliedThemes) {
@@ -222,11 +221,12 @@ public class Settings {
             return fileName;
         }
 
-        @Override
         /**
          * Returns a human readable name of the theme
+         *
          * @return Human-Readable value of the theme
          */
+        @Override
         public String toString() {
             return displayName;
         }
@@ -273,7 +273,7 @@ public class Settings {
 
         /**
          * Creates a SettingObj object with the given parameters
-         * <br>{@Code showName} defaults to true with this constructor
+         * <br>{@code showName} defaults to true with this constructor
          *
          * @param name     Name of the Setting
          * @param node     {@code JavaFX} {@link Node} of the setting
@@ -314,19 +314,20 @@ public class Settings {
             return contents.contentEquals("") || name.contains(contents.toLowerCase()) || keyWords.contains(contents.toLowerCase()) || category.contains(contents.toLowerCase());
         }
 
-        @Override
         /**
          * Returns a String object that contains the name and it's category
+         *
          * @return String representing the setting's name and category
          */
+        @Override
         public String toString() {
             return name + " (" + category + ")";
         }
 
-        @Override
         /**
          * Compares whether or not this SettingObj's values equals a given object
          */
+        @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;

@@ -1,6 +1,5 @@
 package classes;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 /**
@@ -31,7 +30,7 @@ public class Item {
      * <li>{@code Bonuses} = {@code ""}</li></ul>
      * @param name Complete name of the item. This includes any prefixes or suffixes,
      *             such that "Bracers of the Fallen Hero" and "Legendary Bracers of the
-     *             Fallen Hero" count as two separate items</p>
+     *             Fallen Hero" count as two separate items
      */
     public Item(String name) {
         this.name = name;
@@ -44,7 +43,7 @@ public class Item {
      * <li>{@code Bonuses} = {@code ""}</li></ul>
      * @param name Complete name of the item. This includes any prefixes or suffixes,
      *             such that "Bracers of the Fallen Hero" and "Legendary Bracers of the
-     *             Fallen Hero" count as two separate items</p>
+     *             Fallen Hero" count as two separate items
      * @param bindStatus Bind Status of the Item. {@link BindStatus} is an enumerator with the following values:
      *                   <p>{@link BindStatus#UNBOUND Unbound}, {@link BindStatus#BTA Bound to Account},
      *                   {@link BindStatus#BTC Bound to Character}</p>
@@ -60,7 +59,7 @@ public class Item {
      * <ul><li>{@code Bind Status} = {@code Bound to Account}</li></ul>
      * @param name Complete name of the item. This includes any prefixes or suffixes,
      *             such that "Bracers of the Fallen Hero" and "Legendary Bracers of the
-     *             Fallen Hero" count as two separate items</p>
+     *             Fallen Hero" count as two separate items
      * @param bonuses Any bonuses attached to the item. This includes any {@code Mythic Bonuses}, {@code Reaper Bonuses},
      *                or anything crafted onto the item
      */
@@ -73,7 +72,7 @@ public class Item {
      * Creates an empty {@code Item Object} with all set parameters
      * @param name Complete name of the item. This includes any prefixes or suffixes,
      *             such that "Bracers of the Fallen Hero" and "Legendary Bracers of the
-     *             Fallen Hero" count as two separate items</p>
+     *             Fallen Hero" count as two separate items
      * @param bindStatus Bind Status of the Item. {@link BindStatus} is an enumerator with the following values:
      *                   <p>{@link BindStatus#UNBOUND Unbound}, {@link BindStatus#BTA Bound to Account},
      *                   {@link BindStatus#BTC Bound to Character}</p>

@@ -31,7 +31,9 @@ public class DebugPrompt {
             String filename = "crash_log" + new SimpleDateFormat("yyyMMdd_HHmmss").format(Calendar.getInstance().getTime()) + ".txt";
 
             File file = Json.getFile("crashlogs", filename);
-            file.getParentFile().mkdirs();
+            if (!file.getParentFile().mkdirs()) {
+                System.out.println("Could not make directory " + file.getParentFile().getPath());
+            }
 
             try {
                 PrintStream stream = new PrintStream(file);
