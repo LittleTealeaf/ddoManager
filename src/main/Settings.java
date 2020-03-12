@@ -170,8 +170,8 @@ public class Settings {
      * These enumerators represent paths to each specific theme.
      * <p>{@code LIGHT} represents the default {@code javafx} theme.</p>
      * @author Tealeaf
-     * @version 0.0.1
      * @since 0.0.1
+     * @version 0.0.1
      */
     public enum Theme {
         /**
@@ -240,8 +240,8 @@ public class Settings {
     /**
      * Tab that was last left opened
      * @author Tealeaf
-     * @version 0.0.1
      * @since 0.0.1
+     * @version 0.0.1
      */
     public enum OpenedTab {
         CHARACTERS(0), ITEMS(1), RAIDS(2);
@@ -256,8 +256,8 @@ public class Settings {
     /**
      * A modular setting class that includes a setting, it's visual element, and keywords
      * @author Tealeaf
-     * @version 0.0.1
      * @since 0.0.1
+     * @version 0.0.1
      */
     private static class SettingObj {
         private String name;
