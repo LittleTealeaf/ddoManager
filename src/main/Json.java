@@ -11,6 +11,14 @@ import java.io.Writer;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 
+/**
+ * This class contains a list of methods used for serializing and deserializing content from and to files
+ * <p>This method uses the {@link Gson} resource to generate {@code JSON} files</p>
+ *
+ * @author Tealeaf
+ * @version 0.0.1
+ * @since 0.0.1
+ */
 public class Json {
 
     private static final String appDir = AppDirsFactory.getInstance().getUserDataDir("DDO Manager", "", "Tealeaf", true);
@@ -19,7 +27,7 @@ public class Json {
     private static Gson gObject;
 
     /**
-     * Initializes the Json writers
+     * Initializes the Json converters
      */
     public static void load() {
         //Create the builder
@@ -32,8 +40,6 @@ public class Json {
         gStatic = builder.excludeFieldsWithModifiers(java.lang.reflect.Modifier.TRANSIENT).create();
 
     }
-
-    //Serialize and Deserialize methods
 
     /**
      * Serializes an object or class
@@ -80,9 +86,6 @@ public class Json {
     public static Object deserialize(BufferedReader reader, boolean isStatic, Type cls) {
         return (isStatic ? gStatic : gObject).fromJson(reader, cls);
     }
-
-
-    //File Methods
 
     /**
      * Gets the file from a path, starting in a given application directory

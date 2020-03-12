@@ -17,13 +17,16 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ * @author Tealeaf
+ * @version 0.0.1
+ * @since 0.0.1
+ */
 public class DebugPrompt {
     /**
      * Enables the crash-reporting custom script
      * <p>Whenever a crash or error occurs, it stores the crash error text into a file under the crashlogs folder.</p>
-     * <p>
-     * If {@link Settings#showCrashReports} is true, it will open up a dialog, via {@link #showPrompt(List)}
-     * </p>
+     * <p>If {@link Settings#showCrashReports} is true, it will open up a dialog, via {@link #showPrompt(List)}</p>
      */
     public static void setCrashReporting() {
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> {

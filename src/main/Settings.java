@@ -17,6 +17,8 @@ import java.util.Objects;
 
 /**
  * @author Tealeaf
+ * @version 0.0.1
+ * @since 0.0.1
  */
 public class Settings {
 
@@ -25,7 +27,21 @@ public class Settings {
     public static OpenedTab lastOpenedTab = OpenedTab.CHARACTERS;
 
     //USER MODIFIED SETTINGS
+    /**
+     * Whether or not the application will display a crash report whenever an error occurs
+     * <br>Defaults to {@code True}
+     *
+     * @since 0.0.1
+     */
     public static boolean showCrashReports = true;
+
+    /**
+     * The visible theme used in the application
+     * <br>Defaults to {@link Theme#LIGHT Light Theme}
+     *
+     * @see Theme
+     * @since 0.0.1
+     */
     public static Theme theme = Theme.LIGHT;
 
 
@@ -151,36 +167,11 @@ public class Settings {
     }
 
     /**
-     * Default Source of Information for auto-generated information
-     * <ul><li><b>{@link #COMPENDIUM Compendium}</b> - <a href="https://ddocompendium.com">https://ddocompendium.com</a></li>
-     * <li><b>{@link #WIKI Wiki}</b> - <a href="https://ddowiki.com">https://ddowiki.com</a></li>
-     * </ul>
-     */
-    public enum WikiSource {
-        NONE("None"), COMPENDIUM("DDO Compendium"), WIKI("DDO Wiki");
-
-        private String name;
-
-        WikiSource(String name) {
-            this.name = name;
-        }
-
-        /**
-         * Gets the name of the Wiki Source
-         *
-         * @return Name of the Wiki Source
-         */
-        public String getName() {
-            return name;
-        }
-    }
-
-
-    /**
      * These enumerators represent paths to each specific theme.
      * <p>{@code LIGHT} represents the default {@code javafx} theme.</p>
-     *
      * @author Tealeaf
+     * @version 0.0.1
+     * @since 0.0.1
      */
     public enum Theme {
         /**
@@ -248,6 +239,9 @@ public class Settings {
 
     /**
      * Tab that was last left opened
+     * @author Tealeaf
+     * @version 0.0.1
+     * @since 0.0.1
      */
     public enum OpenedTab {
         CHARACTERS(0), ITEMS(1), RAIDS(2);
@@ -261,8 +255,9 @@ public class Settings {
 
     /**
      * A modular setting class that includes a setting, it's visual element, and keywords
-     *
      * @author Tealeaf
+     * @version 0.0.1
+     * @since 0.0.1
      */
     private static class SettingObj {
         private String name;

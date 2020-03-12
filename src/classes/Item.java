@@ -6,7 +6,10 @@ import java.util.Objects;
  * Represents an item in DDO
  * <p>An item contains the following fields: It's name, the bind status, and the bonsues that contains</p>
  * <p>{@code Bonuses} refers to anything, such as mythic / reaper bonuses, crafting, slotted augments, etc.</p>
+ *
  * @author Tealeaf
+ * @version 0.0.1
+ * @since 0.0.1
  */
 public class Item {
 
@@ -124,6 +127,9 @@ public class Item {
                 Objects.equals(bonuses, item.bonuses);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int hashCode() {
         return Objects.hash(name, bindStatus, bonuses);
@@ -134,11 +140,22 @@ public class Item {
         return name + " (" + bindStatus.getShort() + ") + Bonuses: \n " + bonuses;
     }
 
+    /**
+     * Represents the binding status of the item
+     * <p>Values:</p>
+     * <ul><li>{@link #BTC BTC} - <i>Bound to Character</i></li>
+     * <li>{@link #BTA BTA} - <i>Bound to Account</i></li>
+     * <li>{@link #UNBOUND UNBOUND} - <i>Not Bound to Account or Character</i></li></ul>
+     *
+     * @author Tealeaf
+     * @version 0.0.1
+     * @since 0.0.1
+     */
     enum BindStatus {
 
-        BTC("BTC","Bind to Character"),
-        BTA("BTA","Bind to Account"),
-        UNBOUND("N/A","Unbound");
+        BTC("BTC", "Bind to Character"),
+        BTA("BTA", "Bind to Account"),
+        UNBOUND("N/A", "Unbound");
 
         public String nameShort;
         public String nameLong;
@@ -148,10 +165,20 @@ public class Item {
             this.nameLong = nameLong;
         }
 
+        /**
+         * The Short version of the name
+         * <p>For example, for {@link #BTC BTC}, this method will return {@code "BTC"}</p>
+         * @return Short Version of the Name
+         */
         public String getShort() {
             return nameShort;
         }
 
+        /**
+         * The Long version of the name
+         * <p>For example, for {@link #BTC BTC}, this method will return {@code "Bound to Character"}</p>
+         * @return Long Version of the Name
+         */
         public String getLong() {
             return nameLong;
         }

@@ -24,6 +24,8 @@ import java.util.Objects;
  * Main class for the entire application, contains all misc / UI layouts of the application
  *
  * @author Tealeaf
+ * @version Application Version: {@value VERSION}
+ * @since 0.0.1
  */
 public class Main extends Application {
 
